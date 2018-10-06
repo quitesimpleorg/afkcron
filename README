@@ -1,0 +1,4 @@
+afkcron
+=======
+afkcron reads a configuration which specifies programs to launch after n seconds of afk time. 
+Once the user is afk for those seconds, it then starts the program. 
