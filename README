@@ -1,4 +1,24 @@
 afkcron
 =======
-afkcron reads a configuration which specifies programs to launch after n seconds of afk time. 
-Once the user is afk for those seconds, it then starts the program. 
+afkcron simply reports the idle time of the X11 server to a shell script.
+
+Originally, it was reading config files and also handling the return of the
+user by decreasing priority of launched processes or killing them etc.
+
+Now I considered it's best for it to be rather stupid and delegate this 
+to a shell script for example. 
+
+Launching afkcron
+=================
+afkcron [path to script] [how often idle time should be polled, in seconds]
+
+Example: afkcron script.sh 30 
+
+Shellscript
+===========
+First argument: "active" (if idle time has stopped), "idle": When idling
+Second argument: the number of seconds X11 is idling.
+
+Dependencies
+============
+libX11, libXss. Should be a given.
